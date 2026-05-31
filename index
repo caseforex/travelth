@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>แผนเที่ยวไทย 2 เดือน · Thailand 2-Month Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1F3864; --navy2:#2c4f8a; --gold:#B8860B; --gold-l:#d4a92a;
+  --cream:#F7F0DC; --bg:#f6f5f1; --ink:#222; --grey:#5c5c5c; --line:#e3ded2;
+  --card:#ffffff; --shadow:0 6px 24px rgba(31,56,100,.08); --shadow-h:0 12px 36px rgba(31,56,100,.16);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font-family:'Noto Sans Thai',sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;font-size:16px}
+.en{font-size:.82em;color:var(--grey);font-style:italic;display:block;font-weight:400;margin-top:1px}
+a{color:var(--navy2);text-decoration:none;border-bottom:1px dotted var(--gold)}
+a:hover{color:var(--gold);border-bottom-style:solid}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#15264a 0%,#1F3864 55%,#33558f 100%);color:#fff;padding:54px 18px 40px;text-align:center;position:relative;overflow:hidden}
+.hero:after{content:"🇹🇭";position:absolute;font-size:280px;opacity:.06;right:-30px;bottom:-70px}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,46px);font-weight:600;letter-spacing:.5px}
+.hero .sub-th{font-size:clamp(18px,3vw,26px);font-weight:700;margin-top:6px}
+.hero .gold{color:var(--gold-l)}
+.hero p{max-width:680px;margin:14px auto 0;opacity:.92;font-size:15px}
+.stats{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:26px;position:relative;z-index:2}
+.stat{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);border-radius:14px;padding:12px 20px;min-width:120px;backdrop-filter:blur(4px)}
+.stat b{display:block;font-size:26px;color:var(--gold-l);font-weight:800}
+.stat span{font-size:12.5px;opacity:.9}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);box-shadow:0 2px 10px rgba(0,0,0,.04)}
+nav .wrap{display:flex;gap:6px;overflow-x:auto;padding:10px 18px;scrollbar-width:thin}
+nav a{white-space:nowrap;border:0;font-size:13.5px;font-weight:600;color:var(--navy);padding:7px 13px;border-radius:20px;background:#eef1f6}
+nav a:hover{background:var(--navy);color:#fff}
+
+section{padding:38px 0 10px}
+h2.sec{font-family:'Playfair Display',serif;font-size:27px;color:var(--navy);font-weight:600;display:flex;align-items:center;gap:10px;border-bottom:3px solid var(--gold);padding-bottom:8px;margin-bottom:6px}
+h2.sec .num{background:var(--navy);color:#fff;width:34px;height:34px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:16px;font-family:'Noto Sans Thai';flex-shrink:0}
+.sec-en{color:var(--gold);font-style:italic;font-size:14px;margin:-2px 0 18px 44px}
+.lead{color:var(--grey);margin-bottom:18px}
+
+/* alert */
+.alert{background:#fff6e0;border:1px solid #f0d585;border-left:6px solid var(--gold);border-radius:12px;padding:16px 18px;margin:14px 0;display:flex;gap:12px}
+.alert .ic{font-size:24px;flex-shrink:0}
+.alert b{color:#7a5c00}
+.tip{background:var(--cream);border-left:5px solid var(--gold);border-radius:10px;padding:12px 16px;margin:14px 0;font-size:14.5px}
+.tip b{color:#7a5c00}
+
+/* timeline */
+.timeline{position:relative;margin:10px 0 0 12px;padding-left:26px;border-left:3px dashed var(--gold)}
+.tl{position:relative;margin-bottom:20px;background:var(--card);border-radius:14px;box-shadow:var(--shadow);padding:14px 18px}
+.tl:before{content:"";position:absolute;left:-34px;top:18px;width:16px;height:16px;border-radius:50%;background:var(--gold);border:3px solid #fff;box-shadow:0 0 0 2px var(--gold)}
+.tl .ph{font-size:12px;color:var(--gold);font-weight:700;letter-spacing:1px;text-transform:uppercase}
+.tl h3{color:var(--navy);font-size:18px;margin:2px 0 4px}
+.tl .nights{display:inline-block;background:var(--navy);color:#fff;font-size:12px;font-weight:600;padding:2px 10px;border-radius:12px;margin-left:6px}
+.tl p{font-size:14px;color:var(--grey)}
+.tl.blank{background:repeating-linear-gradient(45deg,#fafafa,#fafafa 10px,#f0f0f0 10px,#f0f0f0 20px);border:2px dashed #c9b88a}
+.tl.blank:before{background:#c9b88a;box-shadow:0 0 0 2px #c9b88a}
+
+/* cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;margin-top:10px}
+.card{background:var(--card);border-radius:16px;box-shadow:var(--shadow);overflow:hidden;transition:.2s}
+.card:hover{box-shadow:var(--shadow-h);transform:translateY(-3px)}
+.card .head{background:linear-gradient(120deg,var(--navy),var(--navy2));color:#fff;padding:14px 18px}
+.card .head h3{font-size:19px;font-weight:700}
+.card .head .he{font-size:12.5px;opacity:.85;font-style:italic}
+.card .body{padding:14px 18px}
+.hosp{font-size:13px;background:#eaf4ec;color:#1d6b3a;border-radius:8px;padding:6px 10px;margin-bottom:10px}
+.hub{font-size:13px;background:#eef1f6;color:var(--navy);border-radius:8px;padding:6px 10px;margin-bottom:12px}
+.lbl{font-size:13px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.5px;margin:12px 0 5px;border-bottom:1px solid var(--line);padding-bottom:3px}
+.li{font-size:14px;margin:5px 0;padding-left:18px;position:relative}
+.li:before{content:"›";position:absolute;left:2px;color:var(--gold);font-weight:700}
+.tier{display:flex;gap:8px;font-size:13.5px;margin:5px 0;align-items:baseline}
+.tier .t{font-weight:700;color:var(--navy);min-width:74px;flex-shrink:0}
+.tier .pr{color:var(--gold);font-weight:700;white-space:nowrap}
+.yellow{color:#a07a00;font-weight:700}
+
+/* table */
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13.5px;background:#fff;border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
+th{background:var(--navy);color:#fff;padding:10px;text-align:left;font-weight:600}
+td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:nth-child(even) td{background:#f7f9fc}
+.tot td{font-weight:800;background:var(--cream)!important;color:var(--navy)}
+
+/* budget toggle */
+.btns{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 4px}
+.btns button{font-family:inherit;cursor:pointer;border:2px solid var(--navy);background:#fff;color:var(--navy);font-weight:700;padding:9px 18px;border-radius:24px;font-size:14px;transition:.15s}
+.btns button.on{background:var(--navy);color:#fff}
+.bsum{font-size:14px;color:var(--grey);margin:8px 0}
+.bsum b{color:var(--gold);font-size:18px}
+
+/* checklist */
+.check label{display:flex;gap:10px;align-items:flex-start;background:#fff;border-radius:10px;padding:11px 14px;margin:7px 0;box-shadow:var(--shadow);cursor:pointer;font-size:14.5px}
+.check input{width:20px;height:20px;margin-top:2px;accent-color:var(--gold);flex-shrink:0}
+.check input:checked + span{text-decoration:line-through;color:#aaa}
+
+footer{background:var(--navy);color:#fff;text-align:center;padding:30px 18px;margin-top:40px}
+footer .big{font-size:20px;font-weight:700;margin-bottom:6px}
+footer .s{opacity:.7;font-size:12.5px;font-style:italic}
+.collapse-h{cursor:pointer;user-select:none}
+.collapse-h:after{content:" ▾";color:var(--gold)}
+@media(max-width:600px){.hero{padding:40px 14px 30px}h2.sec{font-size:22px}.sec-en{margin-left:0}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <h1>A 2-Month Thailand Journey</h1>
+  <div class="sub-th">แผนการเดินทาง<span class="gold">ประเทศไทย</span> 2 เดือน</div>
+  <p>ธันวาคม – มกราคม · ออกแบบเส้นทางแบบไม่เร่งรีบ ปลอดภัย ใกล้โรงพยาบาล · สำหรับผู้เดินทาง 2 ท่าน<br><span class="en" style="display:inline">Central · North · South (Diving) · Isaan — designed for comfort, safety & proximity to top hospitals</span></p>
+  <div class="stats">
+    <div class="stat"><b>~55</b><span>คืน / nights</span></div>
+    <div class="stat"><b>4</b><span>ภาค / regions</span></div>
+    <div class="stat"><b>7</b><span>เมืองฐาน / hubs</span></div>
+    <div class="stat"><b>฿336k+</b><span>งบเริ่มต้น 2 ท่าน</span></div>
+  </div>
+</header>
+
+<nav><div class="wrap">
+  <a href="#visa">⚠️ วีซ่า</a>
+  <a href="#route">🗺️ เส้นทาง</a>
+  <a href="#transport">🚐 เดินทาง</a>
+  <a href="#hubs">🏨 ที่พัก+เที่ยว</a>
+  <a href="#dive">🤿 ดำน้ำ</a>
+  <a href="#senior">★ ดูแลผู้สูงวัย</a>
+  <a href="#hospital">🏥 โรงพยาบาล</a>
+  <a href="#budget">💰 งบ 3 ระดับ</a>
+  <a href="#checklist">✅ เช็กลิสต์</a>
+</div></nav>
+
+<div class="wrap">
+
+<!-- VISA -->
+<section id="visa">
+  <h2 class="sec"><span class="num">!</span> เรื่องวีซ่าที่ต้องตัดสินใจก่อน</h2>
+  <div class="sec-en">Visa — decide before booking flights</div>
+  <div class="alert">
+    <div class="ic">⚠️</div>
+    <div><b>ทริปนี้ ~60 วัน อยู่ "ขอบพอดี" ของสิทธิเดิม และเสี่ยงชนกฎใหม่</b><br>
+    ขณะนี้ (พ.ค. 2026) พาสปอร์ตสหรัฐฯ ยังได้ยกเว้นวีซ่าสูงสุด 60 วัน + ต่อได้อีก 30 วัน (1,900 บาท) แต่ไทยเพิ่งอนุมัติ (19 พ.ค. 2026) จะ "ลด" เหลือ 30 วัน โดยยังไม่ประกาศวันบังคับใช้ →
+    <b>แนะนำให้พ่อเลี้ยงยื่น Tourist e-Visa ล่วงหน้าจากสหรัฐฯ เพื่อความชัวร์</b>
+    <span class="en">A ~60-day trip risks the new 30-day cap. Apply for a Tourist e-Visa in advance to be safe.</span></div>
+  </div>
+  <div class="li">กรอก <a href="https://tdac.immigration.go.th/" target="_blank">Thailand Digital Arrival Card (TDAC)</a> ออนไลน์ ก่อนถึงไทยอย่างน้อย 72 ชม. (ทุกคน)</div>
+  <div class="li">เงื่อนไขล่าสุด: <a href="https://travel.state.gov/content/travel/en/international-travel/International-Travel-Country-Information-Pages/Thailand.html" target="_blank">travel.state.gov – Thailand</a> · ยื่นวีซ่า: <a href="https://www.thaievisa.go.th/" target="_blank">thaievisa.go.th</a></div>
+</section>
+
+<!-- ROUTE -->
+<section id="route">
+  <h2 class="sec"><span class="num">1</span> แผนภาพรวมเส้นทาง</h2>
+  <div class="sec-en">Hub-and-Spoke Route — flexible dates, slot into your own calendar</div>
+  <p class="lead">เลือก "เมืองฐาน" ไม่กี่จุด พักจุดละหลายคืน แล้วออกไปเที่ยวรอบๆ แบบไปเช้า-เย็นกลับ → ย้ายโรงแรมน้อย เหนื่อยน้อย ทุกฐานใกล้ รพ.เอกชนชั้นนำ · สภาพอากาศลงตัว: เหนือ+อีสานหนาวสบาย / อันดามันน้ำใสสุด ธ.ค.–ม.ค.</p>
+  <div class="timeline">
+    <div class="tl"><div class="ph">Phase 1 · ภาคกลาง</div><h3>กรุงเทพฯ — ปรับตัว <span class="nights">4–5 คืน</span></h3><p>พักเจ็ตแล็ก + วันลองรถไฟฟ้า BTS/MRT แบบไม่แออัด · ริมแม่น้ำ/สุขุมวิท<span class="en">Arrival & acclimatize + BTS/MRT trial day</span></p></div>
+    <div class="tl"><div class="ph">Phase 2 · ภาคเหนือ</div><h3>เชียงใหม่ <span class="nights">8–10 คืน</span></h3><p>อากาศหนาวสบาย เที่ยวสบายๆ ของจริงภาคเหนือ · day trip รอบเมือง<span class="en">Cool, comfortable, authentic North</span></p></div>
+    <div class="tl"><div class="ph">Phase 3 · ภาคเหนือ</div><h3>เชียงราย <span class="nights">3 คืน</span></h3><p>ภูเขา-ไร่ชา-วัดสวย อากาศเย็น · ต่อรถจากเชียงใหม่ ~3 ชม.<span class="en">Mountains, tea farms, temples</span></p></div>
+    <div class="tl blank"><div class="ph">🚫 เว้นว่าง</div><h3>กรุงเทพฯ — คืนข้ามปี (ไอคอนสยาม)</h3><p>ที่พักจองแล้ว — ไม่จัดแผนคืนนี้<span class="en">NYE at ICONSIAM — pre-booked, intentionally left blank</span></p></div>
+    <div class="tl"><div class="ph">Phase 5 · ภาคใต้</div><h3>เขาหลัก / ภูเก็ต <span class="nights">10–14 คืน</span></h3><p>ทะเลอันดามันน้ำใส + ทริปดำน้ำสิมิลันระดับโลก · พักผ่อน+ดำน้ำ<span class="en">Andaman sea + world-class Similan diving</span></p></div>
+    <div class="tl"><div class="ph">Phase 6 · ภาคอีสาน</div><h3>อุดรธานี <span class="nights">5–7 คืน</span></h3><p>ทะเลบัวแดงบานสะพรั่งปลาย ม.ค. + วัฒนธรรมอีสานแท้ · แวะหนองคาย-โขง<span class="en">Red Lotus Sea peaks late Jan + authentic Isaan</span></p></div>
+    <div class="tl"><div class="ph">Phase 7 · ปิดทริป</div><h3>กรุงเทพฯ — wrap-up <span class="nights">2–3 คืน</span></h3><p>ช้อป/พักผ่อน + (ออปชัน) ดูศูนย์ดูแลผู้สูงอายุ ก่อนบินกลับฮาวาย<span class="en">Wrap-up + optional senior-care tours</span></p></div>
+  </div>
+  <div class="tip"><b>💡 ปรับได้:</b> ถ้าคุณแม่อยากพักเพิ่ม ตัดเชียงรายหรือลดวันอีสานก่อน (ย้ายที่น้อย = เหนื่อยน้อย)</div>
+</section>
+
+<!-- TRANSPORT -->
+<section id="transport">
+  <h2 class="sec"><span class="num">2</span> การเดินทางระหว่างจุด</h2>
+  <div class="sec-en">Transport Between Hubs</div>
+  <p class="lead">วัย 65+: ระยะไกลข้ามภาค "บินเสมอ" (1–1.5 ชม.) · ระยะกลางใช้ "รถพร้อมคนขับ" · ในเมือง BTS/MRT + Grab</p>
+  <table>
+    <tr><th>เส้นทาง / Leg</th><th>ตัวเลือก / Options</th><th>ราคา (2 ท่าน)</th><th>หมายเหตุ</th></tr>
+    <tr><td>กรุงเทพฯ ↔ เชียงใหม่</td><td>✈️ บิน 1 ชม.20 · 🚆 รถไฟตู้นอนชั้น 1 ขบวน 9 (~13 ชม.)</td><td>บิน ฿2,000–5,000<br>รถไฟ ฿2,900–4,900</td><td>บิน=ดีสุด · รถไฟ=ลองประสบการณ์เที่ยวเดียว</td></tr>
+    <tr><td>เชียงใหม่ ↔ เชียงราย</td><td>🚐 รถพร้อมคนขับ ~3 ชม. (แวะไร่ชา/วัด)</td><td>฿2,500–3,800/วัน</td><td>แนะนำ — ยืดหยุ่น เที่ยวระหว่างทาง</td></tr>
+    <tr><td>กรุงเทพฯ → ภูเก็ต/เขาหลัก</td><td>✈️ BKK→HKT + รถรับส่งไปเขาหลัก ~1 ชม.</td><td>บิน ฿2,400–6,000<br>รถ ฿1,500–2,500</td><td>บินตรง + รถส่วนตัวรับที่สนามบิน</td></tr>
+    <tr><td>ภูเก็ต → อุดรธานี</td><td>✈️ ต่อเครื่องผ่าน BKK</td><td>฿4,000–8,000</td><td>บินครึ่งวัน เผื่อเวลาต่อเครื่อง</td></tr>
+    <tr><td>อุดรธานี → กรุงเทพฯ</td><td>✈️ บิน 1 ชม. (เที่ยวบินถี่)</td><td>฿2,000–5,000</td><td>สบาย</td></tr>
+    <tr><td>ในเมือง</td><td>🚆 BTS/MRT · 🚕 Grab · 🚐 เหมารถรายวัน</td><td>BTS ฿16–62 · Grab เริ่ม ฿60 · เหมา ฿2,000–2,500/วัน</td><td>Grab=ปลอดภัย ไม่ต้องต่อราคา</td></tr>
+  </table>
+  <div class="li">จองบิน: <a href="https://www.bangkokair.com/" target="_blank">Bangkok Airways</a> · <a href="https://www.thaiairways.com/" target="_blank">Thai Airways</a> · <a href="https://www.airasia.com/" target="_blank">AirAsia</a> · <a href="https://www.nokair.com/" target="_blank">Nok Air</a></div>
+  <div class="li">รถไฟตู้นอน: <a href="https://dticket.railway.co.th/" target="_blank">D-Ticket การรถไฟ</a> · เหมารถ: <a href="https://www.orientalescape.com/transfer/thailand/period" target="_blank">Oriental Escape</a></div>
+  <div class="tip"><b>💡 ข้อได้เปรียบคุณแม่เป็นคนไทย:</b> ต่อราคาเหมารถ/เรือ และเรียก Grab/แท็กซี่ในเรตคนไทย ไม่โดน "เรตฝรั่ง" — ประหยัดค่ารถ 20–40%</div>
+</section>
+
+<!-- HUBS -->
+<section id="hubs">
+  <h2 class="sec"><span class="num">3</span> ที่พัก + ร้านอาหาร + กิจกรรม</h2>
+  <div class="sec-en">Stay · Eat · Do — by hub (3 hotel tiers each)</div>
+  <p class="lead">โรงแรมคัดจากชื่อเสียงดี สะอาด ไม่มีประวัติด้านลบ · ร้าน "คนพื้นที่กินจริง" ไม่เอาร้านตอแหลฝรั่ง · กิจกรรม "ไม่ร้อน ไม่แออัด" · <span class="yellow">🟡 = ไกล รพ. เล็กน้อย แต่คุ้มค่า</span></p>
+  <div class="grid">
+
+    <div class="card">
+      <div class="head"><h3>🏙️ กรุงเทพฯ</h3><div class="he">Bangkok · arrival + BTS/MRT trial</div></div>
+      <div class="body">
+        <div class="hosp">🏥 บำรุงราษฎร์ · สมิติเวช · BNH · รพ.กรุงเทพ (ระดับโลก JCI)</div>
+        <div class="hub">🚐 Hub: BTS/MRT ทั้งเมือง · ท่าเรือสาทร · ไอคอนสยามมีเรือฟรี</div>
+        <div class="lbl">โรงแรม 3 ระดับ</div>
+        <div class="tier"><span class="t">ดี</span><span>Chatrium Riverside / Hotel Nikko (ทองหล่อ)</span><span class="pr">฿2,800–4,500</span></div>
+        <div class="tier"><span class="t">ดีมาก</span><span><a href="https://www.anantara.com/en/riverside-bangkok" target="_blank">Anantara Riverside</a> / The Okura Prestige</span><span class="pr">฿5,500–8,500</span></div>
+        <div class="tier"><span class="t">พรีเมียม</span><span><a href="https://capellahotels.com/en/capella-bangkok" target="_blank">Capella</a> / Peninsula / <a href="https://www.mandarinoriental.com/en/bangkok/chao-phraya-river" target="_blank">Mandarin Oriental</a></span><span class="pr">฿14,000+</span></div>
+        <div class="lbl">ร้านท้องถิ่น (ของจริง)</div>
+        <div class="li"><a href="https://maps.google.com/?q=Krua+Apsorn+Bangkok" target="_blank">ครัวอัปษร</a> — ไทยตำรับชาววัง ปูผัดผงกะหรี่/ไข่เจียวปู</div>
+        <div class="li"><a href="https://maps.google.com/?q=Or+Tor+Kor+Market" target="_blank">ตลาด อ.ต.ก.</a> — ตลาดสดพรีเมียมติดอันดับโลก</div>
+        <div class="li"><a href="https://maps.google.com/?q=Polo+Fried+Chicken+Bangkok" target="_blank">ไก่ทอดเจ๊กี</a> · <a href="https://maps.google.com/?q=Nai+Mong+Hoy+Tod" target="_blank">หอยทอดนายมงคล (เยาวราช)</a></div>
+        <div class="li">พรีเมียม: <a href="https://maps.google.com/?q=Sorn+Bangkok" target="_blank">Sorn</a> / <a href="https://maps.google.com/?q=Le+Du+Bangkok" target="_blank">Le Du</a> (จองล่วงหน้า)</div>
+        <div class="lbl">กิจกรรม — วันลองรถไฟฟ้า</div>
+        <div class="li">เช้า: <a href="https://metro.bemplc.co.th/" target="_blank">MRT</a> ลงวัดมังกร (เยาวราช) → สนามไชย (วัดโพธิ์/มิวเซียมสยาม)</div>
+        <div class="li">บ่าย: <a href="https://www.bts.co.th/eng/" target="_blank">BTS</a> สะพานตากสิน → เรือ → <a href="https://maps.google.com/?q=ICONSIAM" target="_blank">ไอคอนสยาม</a> (SookSiam เย็นสบาย)</div>
+        <div class="li">เบาๆ: สวนลุมเช้า · <a href="https://maps.google.com/?q=Jim+Thompson+House" target="_blank">บ้านจิม ทอมป์สัน</a> · ล่องเรือดินเนอร์</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="head"><h3>⛰️ เชียงใหม่</h3><div class="he">Chiang Mai · cool & authentic North</div></div>
+      <div class="body">
+        <div class="hosp">🏥 รพ.กรุงเทพ เชียงใหม่ · เชียงใหม่ราม</div>
+        <div class="hub">🚐 Hub: เมืองเก่ารอบคูเมือง · เหมารถไปดอยสุเทพ-แม่ริม · สนามบิน 15 นาที</div>
+        <div class="lbl">โรงแรม 3 ระดับ</div>
+        <div class="tier"><span class="t">ดี</span><span>Tamarind Village / Rachamankha (บูทีคเมืองเก่า)</span><span class="pr">฿2,200–3,800</span></div>
+        <div class="tier"><span class="t">ดีมาก</span><span><a href="https://www.anantara.com/en/chiang-mai" target="_blank">Anantara CM</a> / <a href="https://www.137pillarshotels.com/chiang-mai/" target="_blank">137 Pillars</a></span><span class="pr">฿5,000–9,000</span></div>
+        <div class="tier"><span class="t">พรีเมียม</span><span><a href="https://www.fourseasons.com/chiangmai/" target="_blank">Four Seasons (แม่ริม)</a> / Dhara Dhevi</span><span class="pr">฿16,000+</span></div>
+        <div class="lbl">ร้านอาหารเหนือ (ของแท้)</div>
+        <div class="li"><a href="https://maps.google.com/?q=Khao+Soi+Khun+Yai+Chiang+Mai" target="_blank">ข้าวซอยคุณยาย</a> — เปิด 10:00–14:00 ปิดอาทิตย์ ไปก่อนเที่ยง</div>
+        <div class="li"><a href="https://maps.google.com/?q=Huen+Phen+Chiang+Mai" target="_blank">เฮือนเพ็ญ</a> — อาหารเหนือ 70 ปี มีแอร์ น้ำพริกอ่อง ไส้อั่ว</div>
+        <div class="li"><a href="https://maps.google.com/?q=SP+Chicken+Chiang+Mai" target="_blank">SP Chicken</a> ไก่ย่างหน้าวัดพระสิงห์ · <a href="https://maps.google.com/?q=Tong+Tem+Toh+Chiang+Mai" target="_blank">ตองเทมโต๊ะ</a> (นิมมาน)</div>
+        <div class="lbl">กิจกรรม (เย็นสบาย ธ.ค.–ม.ค.)</div>
+        <div class="li"><a href="https://maps.google.com/?q=Wat+Phra+That+Doi+Suthep" target="_blank">ดอยสุเทพ</a> — มีรถราง/ลิฟต์ ไม่ต้องเดินบันได</div>
+        <div class="li"><a href="https://maps.google.com/?q=Royal+Park+Rajapruek" target="_blank">อุทยานหลวงราชพฤกษ์</a> — มีรถกอล์ฟพาชม เดินสบาย</div>
+        <div class="li"><span class="yellow">🟡</span> <a href="https://maps.google.com/?q=Doi+Inthanon" target="_blank">ดอยอินทนนท์</a> — หนาวสุดในไทย ขับรถถึงจุดชม (~2 ชม.)</div>
+        <div class="li"><a href="https://maps.google.com/?q=Mae+Kampong" target="_blank">แม่กำปอง</a> · ถนนคนเดินวันอาทิตย์ · ปางช้างอนุรักษ์</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="head"><h3>🍵 เชียงราย</h3><div class="he">Chiang Rai · tea farms & temples</div></div>
+      <div class="body">
+        <div class="hosp">🏥 รพ.โอเวอร์บรุ๊ค · รพ.กรุงเทพ เชียงราย</div>
+        <div class="hub">🚐 Hub: ตัวเมือง · เหมารถไปวัดร่องขุ่น/สิงห์ปาร์ค/ดอยตุง</div>
+        <div class="lbl">โรงแรม 3 ระดับ</div>
+        <div class="tier"><span class="t">ดี</span><span>Le Patta / The Heritage</span><span class="pr">฿1,800–3,000</span></div>
+        <div class="tier"><span class="t">ดีมาก</span><span><a href="https://www.marriott.com/hotels/travel/ceile-le-meridien-chiang-rai-resort/" target="_blank">Le Méridien (ริมน้ำกก)</a> / The Riverie</span><span class="pr">฿3,500–6,000</span></div>
+        <div class="tier"><span class="t">พรีเมียม</span><span><a href="https://www.anantara.com/en/golden-triangle-chiang-rai" target="_blank">Anantara Golden Triangle</a> <span class="yellow">🟡</span></span><span class="pr">฿18,000+</span></div>
+        <div class="lbl">ร้าน + กิจกรรม</div>
+        <div class="li"><a href="https://maps.google.com/?q=Phu+Lae+Restaurant+Chiang+Rai" target="_blank">ภูแล</a> 🍽️ อาหารเหนือยอดนิยม · ตลาดเช้ากาดหลวง</div>
+        <div class="li"><a href="https://maps.google.com/?q=Wat+Rong+Khun" target="_blank">วัดร่องขุ่น</a> (ไปเช้าเลี่ยงคน) · <a href="https://maps.google.com/?q=Wat+Rong+Suea+Ten" target="_blank">วัดร่องเสือเต้น</a></div>
+        <div class="li"><a href="https://maps.google.com/?q=Singha+Park+Chiang+Rai" target="_blank">สิงห์ปาร์ค</a> — มีรถรางพาชม เดินน้อย</div>
+        <div class="li"><a href="https://maps.google.com/?q=Choui+Fong+Tea" target="_blank">ไร่ชาฉุยฟง</a> · <a href="https://maps.google.com/?q=Doi+Tung" target="_blank">ดอยตุง</a> สวนแม่ฟ้าหลวง</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="head"><h3>🏝️ เขาหลัก / ภูเก็ต</h3><div class="he">Khao Lak / Phuket · sea + diving base</div></div>
+      <div class="body">
+        <div class="hosp">🏥 รพ.กรุงเทพ ภูเก็ต (ใหญ่สุดภาคใต้) — จากเขาหลัก <span class="yellow">🟡 ~1–1.5 ชม.</span></div>
+        <div class="hub">🚐 Hub: ท่าเรือทับละมุ → ดำน้ำสิมิลัน · ภูเก็ต: หาดไม้ขาว/ในยาง เงียบ ใกล้สนามบิน+รพ.</div>
+        <div class="lbl">โรงแรม 3 ระดับ</div>
+        <div class="tier"><span class="t">ดี</span><span>The Sands Khao Lak / Khaolak Merlin</span><span class="pr">฿2,500–4,500</span></div>
+        <div class="tier"><span class="t">ดีมาก</span><span><a href="https://www.sarojin.com/" target="_blank">The Sarojin (ผู้ใหญ่เท่านั้น)</a> / Pullman</span><span class="pr">฿6,500–11,000</span></div>
+        <div class="tier"><span class="t">พรีเมียม</span><span><a href="https://www.aleenta.com/phuket-phangnga/" target="_blank">Aleenta</a> / <a href="https://trisara.com/" target="_blank">Trisara (ใกล้ รพ.)</a></span><span class="pr">฿15,000+</span></div>
+        <div class="lbl">ร้านใต้/ภูเก็ตเก่า</div>
+        <div class="li"><a href="https://maps.google.com/?q=Raya+Restaurant+Phuket" target="_blank">รายา</a> — ภูเก็ตตำรับเก่า หมูฮ้อง/หมี่ฮกเกี้ยน</div>
+        <div class="li"><a href="https://maps.google.com/?q=One+Chun+Phuket" target="_blank">วันชัน</a> · <a href="https://maps.google.com/?q=Tu+Kab+Khao+Phuket" target="_blank">ตู้กับข้าว</a> (เมืองเก่า)</div>
+        <div class="li">เขาหลัก: ซีฟู้ดริมหาด/ตลาดบางเนียง (คุณแม่ต่อราคา)</div>
+        <div class="lbl">กิจกรรม</div>
+        <div class="li">พ่อเลี้ยง: ดำน้ำสิมิลัน · คุณแม่: สปา/หาดเงียบ หรือ snorkel วันคลื่นนิ่ง</div>
+        <div class="li"><a href="https://maps.google.com/?q=Phuket+Old+Town" target="_blank">เมืองเก่าภูเก็ต</a> เดินเช้าๆ ไม่ร้อน · <span class="yellow">🟡</span> <a href="https://maps.google.com/?q=Phang+Nga+Bay" target="_blank">อ่าวพังงา</a> เหมาเรือเช้า</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="head"><h3>🌸 อุดรธานี & อีสาน</h3><div class="he">Udon Thani · Red Lotus Sea & real Isaan</div></div>
+      <div class="body">
+        <div class="hosp">🏥 รพ.กรุงเทพ อุดร (180 เตียง · ชั้นนำอีสาน) · AEK อุดร อินเตอร์</div>
+        <div class="hub">🚐 Hub: ตัวเมือง · เหมารถไปทะเลบัวแดง ~45 นาที · บ้านเชียง · หนองคาย ~55 กม.</div>
+        <div class="lbl">โรงแรม</div>
+        <div class="tier"><span class="t">ดี</span><span><a href="https://www.centarahotelsresorts.com/centara/cud" target="_blank">Centara Udon</a> (ดีสุดในเมือง ติด UD Town)</span><span class="pr">฿1,500–2,800</span></div>
+        <div class="tier"><span class="t">ดีมาก</span><span>Centara (Suite) / The Pannarai</span><span class="pr">฿2,800–4,500</span></div>
+        <div class="tier"><span class="t">หมายเหตุ</span><span>อีสานเน้น "ของจริง" วัฒนธรรม-อาหาร ไม่ใช่ความหรู</span><span class="pr">—</span></div>
+        <div class="lbl">ร้านอีสาน (แซ่บของจริง)</div>
+        <div class="li"><a href="https://maps.google.com/?q=Krua+Khun+Nid+Udon+Thani" target="_blank">ครัวคุณนิด</a> — อีสานแท้ ส้มตำปลาร้า ลาบ ก้อย</div>
+        <div class="li"><a href="https://maps.google.com/?q=VT+Namnueng+Udon+Thani" target="_blank">VT แหนมเนือง</a> — สถาบันของอุดร · <a href="https://maps.google.com/?q=UD+Town+Udon+Thani" target="_blank">ตลาด UD Town</a></div>
+        <div class="lbl">กิจกรรม (เย็นสบาย ม.ค.)</div>
+        <div class="li"><a href="https://maps.google.com/?q=Red+Lotus+Sea+Udon+Thani" target="_blank">ทะเลบัวแดง</a> — เรือชมเช้า 6:00–9:00 บานสุดปลาย ม.ค.–ต้น ก.พ.</div>
+        <div class="li"><a href="https://maps.google.com/?q=Ban+Chiang+National+Museum" target="_blank">พิพิธภัณฑ์บ้านเชียง</a> (UNESCO) · <a href="https://maps.google.com/?q=Wat+Pa+Phu+Kon" target="_blank">วัดป่าภูก้อน</a></div>
+        <div class="li"><span class="yellow">🟡</span> หนองคาย: <a href="https://maps.google.com/?q=Sala+Keoku" target="_blank">ศาลาแก้วกู่</a> · ริมโขงตลาดท่าเสด็จ</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- DIVE -->
+<section id="dive">
+  <h2 class="sec"><span class="num">4</span> ทริปดำน้ำ — หมู่เกาะสิมิลัน</h2>
+  <div class="sec-en">Diving — The Similan Islands (world-class, safe, day-trip accessible)</div>
+  <div class="card" style="margin-top:6px">
+    <div class="head" style="background:linear-gradient(120deg,#0a6b8a,#0c8fb0)"><h3>🤿 ทำไมเลือกสิมิลันแบบไป-กลับวันเดียว</h3></div>
+    <div class="body">
+      <p style="font-size:14.5px">ปะการัง+น้ำใสติดอันดับโลก เปิด ต.ค.–พ.ค. โดย <b>ธ.ค.–ม.ค. คือช่วงน้ำใสนิ่งที่สุด</b> · เป็นอุทยานที่จัดการดี จำกัดจำนวนคน = สะอาดและปลอดภัย · เรือเร็วจากท่าทับละมุ ~1–1.5 ชม. → <b>พ่อเลี้ยงได้ดำจุดระดับโลก ส่วนคุณแม่กลับมานอนรีสอร์ตทุกคืน</b> ตรงโจทย์ "ปลอดภัย ไม่ห่างไกลความเจริญ"</p>
+      <div class="lbl">ผู้ให้บริการที่น่าเชื่อถือ (ประวัติความปลอดภัยดี)</div>
+      <div class="li"><a href="https://www.bigbluedivingkhaolak.com/" target="_blank">Big Blue Diving Khao Lak</a> — 20+ ปี ดำสิมิลัน "zero serious incidents"</div>
+      <div class="li"><a href="https://www.seadragondivecenter.com/" target="_blank">Sea Dragon Dive Center</a> · <a href="https://www.khaolakexplorer.com/" target="_blank">Khao Lak Explorer</a> · <a href="https://www.khaolakscubaadventures.com/" target="_blank">Khao Lak Scuba Adventures (SSI 5★)</a></div>
+      <table>
+        <tr><th>รูปแบบ</th><th>ราคา/คน</th><th>หมายเหตุ</th></tr>
+        <tr><td>Day Trip สิมิลัน 2–3 ดำ</td><td>฿4,500–6,500</td><td>รวมอุปกรณ์ อาหาร ค่าอุทยาน — เหมาะสุด</td></tr>
+        <tr><td>Snorkel (สำหรับคุณแม่)</td><td>฿2,500–3,500</td><td>เกาะน้ำตื้นนิ่ง เช่น เกาะเมียง</td></tr>
+        <tr><td>Liveaboard 2–4 วัน (ออปชัน)</td><td>฿18,000–40,000</td><td>ถ้าอยากดำหนักรวมริเชลิว ร็อค (สุรินทร์)</td></tr>
+      </table>
+      <div class="tip"><b>💡 วัย 60+ ก่อนลงน้ำ:</b> เตรียมใบรับรอง/แบบสอบถามแพทย์ (PADI Medical) + บัตรนักดำน้ำ + ประกันดำน้ำ (เช่น DAN) · ผู้ให้บริการดีๆ มีออกซิเจน/แผนฉุกเฉินบนเรือ</div>
+      <div class="alert"><div class="ic">🚫</div><div><b>หลีกเลี่ยง:</b> เกาะเต่า/ฝั่งอ่าวไทย ช่วง พ.ย.–ธ.ค. (หน้ามรสุม น้ำขุ่น คลื่นแรง) — ฝั่งอันดามันคือคำตอบของหน้านี้ · <a href="https://blog.padi.com/best-time-to-go-scuba-diving-in-thailand/" target="_blank">ข้อมูลฤดูดำน้ำ PADI</a></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SENIOR -->
+<section id="senior">
+  <h2 class="sec"><span class="num">★</span> พิเศษ: ศูนย์ดูแลผู้สูงอายุระดับพรีเมียมในไทย</h2>
+  <div class="sec-en">Premium Senior Living in Thailand — for long-term consideration</div>
+  <p class="lead">ไทยเป็นหนึ่งในจุดหมายดูแลผู้สูงวัยคุ้มค่าที่สุดในโลก: พยาบาลพูดอังกฤษ ผูกกับ รพ.เอกชน ช่วยทำวีซ่าเกษียณ ค่าใช้จ่ายต่ำกว่าตะวันตก 2–4 เท่า · <b>เชียงใหม่=ศูนย์กลาง</b> เข้ากับแผนพอดี แวะดูจริง 1–2 แห่งตอนพักเชียงใหม่ได้เลย</p>
+  <table>
+    <tr><th>สถานที่</th><th>ทำเล</th><th>ค่าใช้จ่าย/เดือน</th><th>จุดเด่น</th></tr>
+    <tr><td><a href="https://www.vivobene.asia/" target="_blank">Vivobene</a></td><td>เชียงใหม่</td><td>฿24,000 – ฿120,000–130,000</td><td>มาตรฐานสวิส ดูแล 24 ชม. รวมช่วยทำวีซ่าเกษียณ</td></tr>
+    <tr><td><a href="https://www.careresortchiangmai.com/" target="_blank">Care Resort</a></td><td>เชียงใหม่</td><td>฿60,000–110,000</td><td>รีสอร์ตหรู อิสระ+ดูแลใกล้ชิด+สมองเสื่อม</td></tr>
+    <tr><td>Ban Sabai Village</td><td>เชียงใหม่</td><td>เริ่ม ฿49,000</td><td>บ้านพักเกษียณหรู บรรยากาศรีสอร์ต</td></tr>
+    <tr><td><a href="https://www.jinwellbeing.com/" target="_blank">Jin Wellbeing County</a></td><td>กรุงเทพฯ (รังสิต)</td><td>ซื้อ/เช่า+บริการ</td><td>ทาวน์ชิปสุขภาพ ผูกกับ รพ.ธนบุรี</td></tr>
+  </table>
+  <p style="font-size:14px;color:var(--grey)">กรอบราคาเทียบ: พรีเมียมในไทย ~$2,000–4,000/เดือน เทียบ $8,000–15,000 ในสหรัฐฯ/อังกฤษ สำหรับบริการระดับเดียวกัน · รีวิว: <a href="https://www.vivocare.org/post/thailand-s-best-dementia-care-memory-care-facilities-2025-review" target="_blank">VivoCare 2025–26</a> · <a href="https://www.expatden.com/thailand/retirement-home-thailand/" target="_blank">ExpatDen cost guide</a></p>
+  <div class="tip"><b>💡 แอ็กชันจริง:</b> ระหว่างพักเชียงใหม่ 8–10 คืน นัดทัวร์ Vivobene + Care Resort ให้พ่อเลี้ยงเห็นของจริง = เห็นภาพอนาคตในไทยชัด</div>
+</section>
+
+<!-- HOSPITAL -->
+<section id="hospital">
+  <h2 class="sec"><span class="num">5</span> โรงพยาบาลใกล้แต่ละฐาน</h2>
+  <div class="sec-en">Hospital Map by Hub</div>
+  <table>
+    <tr><th>ฐาน</th><th>โรงพยาบาลเอกชนชั้นนำ</th><th>ระยะ</th></tr>
+    <tr><td>กรุงเทพฯ</td><td><a href="https://www.bumrungrad.com/en" target="_blank">บำรุงราษฎร์</a> / สมิติเวช / BNH / รพ.กรุงเทพ</td><td>ในเมือง</td></tr>
+    <tr><td>เชียงใหม่</td><td><a href="https://www.bangkokhospital.com/en/chiang-mai" target="_blank">รพ.กรุงเทพ เชียงใหม่</a> / เชียงใหม่ราม</td><td>ในเมือง</td></tr>
+    <tr><td>เชียงราย</td><td>รพ.โอเวอร์บรุ๊ค / รพ.กรุงเทพ เชียงราย</td><td>ในเมือง</td></tr>
+    <tr><td>เขาหลัก</td><td><a href="https://www.phukethospital.com/" target="_blank">รพ.กรุงเทพ ภูเก็ต</a> (ใหญ่สุด)</td><td><span class="yellow">🟡 ~1–1.5 ชม.</span></td></tr>
+    <tr><td>ภูเก็ต</td><td>รพ.กรุงเทพ ภูเก็ต / สิริโรจน์</td><td>ในเมือง</td></tr>
+    <tr><td>อุดรธานี</td><td><a href="https://www.bangkokhospital.com/en/udon" target="_blank">รพ.กรุงเทพ อุดร (180 เตียง)</a> / AEK อุดร</td><td>ในเมือง</td></tr>
+  </table>
+  <div class="tip"><b>📞 พกไว้:</b> บัตรประกันพ่อเลี้ยง + รพ.กรุงเทพ <b>1719</b> · สายด่วนนักท่องเที่ยว <b>1672</b> · ฉุกเฉินแห่งชาติ <b>1669</b></div>
+</section>
+
+<!-- BUDGET -->
+<section id="budget">
+  <h2 class="sec"><span class="num">6</span> งบประมาณ 3 ระดับ</h2>
+  <div class="sec-en">Budget — 3 Tiers (2 pax, ~60 days · in-Thailand only · ~฿35/USD)</div>
+  <div class="btns">
+    <button id="b1" class="on" onclick="setB(1)">ดี · Good</button>
+    <button id="b2" onclick="setB(2)">ดีมาก · Very Good</button>
+    <button id="b3" onclick="setB(3)">พรีเมียม · Premium</button>
+  </div>
+  <div class="bsum" id="bsum"></div>
+  <table id="btable"></table>
+  <div class="tip"><b>💡 คำแนะนำสำหรับคนคุ้มค่าเงิน:</b> anchor ที่ "ดีมาก" แล้ว splurge เป็น "พรีเมียม" เฉพาะ 2 ช่วง wow (เช่น รีสอร์ตเขาหลัก + Four Seasons เชียงใหม่) ที่เหลือคุมระดับดีมาก — ได้ความประทับใจสูงสุดต่อบาท</div>
+  <div class="tip"><b>💡 ข้อได้เปรียบคุณแม่เป็นคนไทย:</b> ต่อราคา/สั่งอาหารเรตคนไทย/นำเที่ยวเอง ลดงบเดินทาง+อาหาร+กิจกรรม ~15–25% · <span style="color:var(--grey)">ไม่รวมตั๋วบินระหว่างประเทศ + คืนข้ามปี (จองแล้ว)</span></div>
+</section>
+
+<!-- CHECKLIST -->
+<section id="checklist">
+  <h2 class="sec"><span class="num">7</span> เช็กลิสต์ก่อนเดินทาง</h2>
+  <div class="sec-en">Pre-Departure Checklist — tap to check off</div>
+  <div class="check">
+    <label><input type="checkbox"><span>วีซ่า: ยื่น Tourist e-Visa ล่วงหน้า (กันกฎ 30 วันใหม่) + กรอก TDAC ก่อนถึง 72 ชม.</span></label>
+    <label><input type="checkbox"><span>ประกันเดินทาง+สุขภาพพ่อเลี้ยง (ครอบคลุมดำน้ำ) + บัตรนักดำน้ำ + ใบรับรองแพทย์ดำน้ำ</span></label>
+    <label><input type="checkbox"><span>จองตั๋วบินในประเทศล่วงหน้า (ราคาขึ้นช่วงปีใหม่) + ยืนยันรถรับส่งสนามบิน</span></label>
+    <label><input type="checkbox"><span>ซิม/eSIM (AIS/True) รับที่สนามบิน + แอป Grab + Google Maps offline</span></label>
+    <label><input type="checkbox"><span>ยาประจำตัว + สำเนาใบสั่งยา + รายชื่อ รพ.เครือกรุงเทพแต่ละเมือง</span></label>
+    <label><input type="checkbox"><span>เสื้อผ้า: เหนือ/อีสานเย็น (เสื้อกันหนาวบาง) + ใต้ร้อนชื้น (เสื้อบาง กันแดด)</span></label>
+    <label><input type="checkbox"><span>(ออปชัน) นัดทัวร์ศูนย์ดูแลผู้สูงอายุเชียงใหม่ล่วงหน้า</span></label>
+  </div>
+</section>
+
+</div>
+
+<footer>
+  <div class="big">ขอให้เดินทางปลอดภัยและประทับใจประเทศไทย 🇹🇭</div>
+  <div class="s">Safe travels — and may Thailand win him over. · แผนนี้ปรับยืดหดได้ตามแรงของคุณแม่</div>
+</footer>
+
+<script>
+const B={
+ 1:{name:'ดี · Good',total:'~฿336,000 · ~$9,600',rows:[
+   ['ที่พัก (avg ฿2,800 × ~55 คืน)','฿154,000','$4,400'],
+   ['เดินทางในประเทศ','฿48,000','$1,370'],
+   ['อาหาร (local ฿1,200/วัน)','฿72,000','$2,060'],
+   ['กิจกรรม + ดำน้ำ (day trip)','฿42,000','$1,200'],
+   ['เบ็ดเตล็ด (ซิม/ประกัน/วีซ่า)','฿20,000','$570'],
+ ]},
+ 2:{name:'ดีมาก · Very Good',total:'~฿680,000 · ~$19,400',rows:[
+   ['ที่พัก (avg ฿6,000 × ~55 คืน)','฿330,000','$9,400'],
+   ['เดินทาง (เหมารถบ่อยขึ้น)','฿75,000','$2,140'],
+   ['อาหาร (mix ฿2,500/วัน)','฿150,000','$4,290'],
+   ['กิจกรรม + ดำน้ำ (ทัวร์ส่วนตัว)','฿90,000','$2,570'],
+   ['เบ็ดเตล็ด','฿35,000','$1,000'],
+ ]},
+ 3:{name:'พรีเมียม · Premium',total:'~฿1,510,000 · ~$43,100',rows:[
+   ['ที่พัก (วิลล่า avg ฿15,000 × ~55)','฿825,000','$23,600'],
+   ['เดินทาง (รถส่วนตัวตลอด)','฿150,000','$4,290'],
+   ['อาหาร (fine dining ฿5,000/วัน)','฿300,000','$8,570'],
+   ['กิจกรรม + ดำน้ำส่วนตัว + สปา','฿180,000','$5,140'],
+   ['เบ็ดเตล็ด','฿55,000','$1,570'],
+ ]}
+};
+function setB(n){
+  for(let i=1;i<=3;i++)document.getElementById('b'+i).classList.toggle('on',i===n);
+  const d=B[n];
+  document.getElementById('bsum').innerHTML='รวมทั้งทริป (2 ท่าน): <b>'+d.total+'</b>';
+  let h='<tr><th>หมวด / Category</th><th>฿ (บาท)</th><th>≈ USD</th></tr>';
+  d.rows.forEach(r=>h+='<tr><td>'+r[0]+'</td><td>'+r[1]+'</td><td>'+r[2]+'</td></tr>');
+  h+='<tr class="tot"><td>รวม / Total</td><td>'+d.total.split(' · ')[0]+'</td><td>'+d.total.split(' · ')[1]+'</td></tr>';
+  document.getElementById('btable').innerHTML=h;
+}
+setB(1);
+</script>
+</body>
+</html>
